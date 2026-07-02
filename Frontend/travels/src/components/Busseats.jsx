@@ -55,59 +55,122 @@ const BusSeats = ({ token }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6">
-      {/* BUS INFO */}
-      {bus && (
-        <div className="bg-white shadow-md rounded-2xl p-6 mb-6">
-          <h1 className="text-2xl font-bold text-blue-600 mb-4">
-            {bus.bus_name}
-          </h1>
+    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to-cyan-100 py-10 px-6">
 
-          <div className="grid md:grid-cols-2 gap-3 text-gray-700">
-            <p>
-              <span className="font-semibold">Bus Number:</span> {bus.number}
-            </p>
-            <p>
-              <span className="font-semibold">From:</span> {bus.origin}
-            </p>
-            <p>
-              <span className="font-semibold">To:</span> {bus.destination}
-            </p>
-            <p>
-              <span className="font-semibold">Start Time:</span>{" "}
-              {bus.start_time}
-            </p>
-            <p>
-              <span className="font-semibold">Reach Time:</span>{" "}
-              {bus.reach_time}
-            </p>
+      {bus && (
+        <div className="max-w-6xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden mb-10">
+
+          <div className="bg-gradient-to-r from-blue-700 to-cyan-500 text-white p-8">
+
+            <div className="flex justify-between items-center">
+
+              <div>
+                <h1 className="text-4xl font-bold">{bus.bus_name}</h1>
+                <p className="mt-2 text-blue-100">{bus.number}</p>
+              </div>
+
+              <div className="text-right">
+                <p className="text-lg font-semibold">⭐ 4.8</p>
+                <p className="text-blue-100">Premium Bus</p>
+              </div>
+
+            </div>
+
           </div>
+
+          <div className="grid md:grid-cols-5 gap-6 p-8">
+
+            <div>
+              <p className="text-gray-500 text-sm">From</p>
+              <h3 className="text-xl font-bold">{bus.origin}</h3>
+            </div>
+
+            <div>
+              <p className="text-gray-500 text-sm">To</p>
+              <h3 className="text-xl font-bold">{bus.destination}</h3>
+            </div>
+
+            <div>
+              <p className="text-gray-500 text-sm">Departure</p>
+              <h3 className="text-xl font-bold">{bus.start_time}</h3>
+            </div>
+
+            <div>
+              <p className="text-gray-500 text-sm">Arrival</p>
+              <h3 className="text-xl font-bold">{bus.reach_time}</h3>
+            </div>
+
+            <div>
+              <p className="text-gray-500 text-sm">Fare</p>
+              <h3 className="text-2xl font-bold text-green-600">₹799</h3>
+            </div>
+
+          </div>
+
         </div>
       )}
 
-      {/* SEATS */}
-      <h2 className="text-xl font-bold mb-4 text-gray-800">
-        Select Your Seat
-      </h2>
+      <div className="max-w-5xl mx-auto">
 
-      <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-3">
-        {seats.map((seat) => (
-          <button
-            key={seat.id}
-            onClick={() => handleBook(seat.id)}
-            disabled={seat.is_booked}
-            className={`py-2 rounded-lg font-medium text-sm transition duration-200 shadow
-              ${
-                seat.is_booked
-                  ? "bg-red-500 text-white cursor-not-allowed"
-                  : "bg-green-500 hover:bg-green-600 text-white"
-              }
+        <div className="flex justify-between items-center mb-8">
+
+          <h2 className="text-3xl font-bold text-slate-800">
+            Select Your Seat
+          </h2>
+
+          <div className="flex gap-6">
+
+            <div className="flex items-center gap-2">
+              <div className="w-5 h-5 rounded bg-green-500"></div>
+              <span>Available</span>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <div className="w-5 h-5 rounded bg-red-500"></div>
+              <span>Booked</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div className="bg-white rounded-3xl shadow-2xl p-8">
+
+          <div className="flex justify-end mb-8">
+
+            <div className="bg-gray-200 px-6 py-3 rounded-xl font-semibold">
+              🚌 Driver
+            </div>
+
+          </div>
+
+          <div className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-4 gap-5">
+
+            {seats.map((seat) => (
+
+              <button
+                key={seat.id}
+                onClick={() => handleBook(seat.id)}
+                disabled={seat.is_booked}
+                className={`h-16 rounded-2xl font-bold transition-all duration-300 shadow-lg hover:scale-105
+
+            ${seat.is_booked
+                    ? "bg-red-500 text-white cursor-not-allowed"
+                    : "bg-green-500 hover:bg-green-600 text-white"
+                  }
             `}
-          >
-           seat numbers {seat.seat_number}
-          </button>
-        ))}
+              >
+                {seat.seat_number}
+              </button>
+
+            ))}
+
+          </div>
+
+        </div>
+
       </div>
+
     </div>
   );
 };

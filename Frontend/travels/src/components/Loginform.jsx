@@ -51,12 +51,8 @@ const LoginForm = ({ onLogin }) => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-950 via-indigo-900 to-black px-4">
-
-      {/* Background Glow */}
       <div className="absolute w-72 h-72 bg-cyan-500 opacity-20 blur-3xl rounded-full top-10 left-10"></div>
       <div className="absolute w-72 h-72 bg-purple-600 opacity-20 blur-3xl rounded-full bottom-10 right-10"></div>
-
-      {/* Card */}
       <div className="relative w-full max-w-md bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl p-8">
 
         <h1 className="text-4xl font-bold text-center text-white">
@@ -68,8 +64,6 @@ const LoginForm = ({ onLogin }) => {
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-5">
-
-          {/* Username */}
           <div>
             <label className="block text-gray-300 mb-2">
               Username
@@ -85,7 +79,6 @@ const LoginForm = ({ onLogin }) => {
             />
           </div>
 
-          {/* Password */}
           <div>
             <label className="block text-gray-300 mb-2">
               Password
@@ -101,7 +94,6 @@ const LoginForm = ({ onLogin }) => {
             />
           </div>
 
-          {/* Login Button */}
           <button
             type="submit"
             disabled={loading}
@@ -110,7 +102,6 @@ const LoginForm = ({ onLogin }) => {
             {loading ? "Logging in..." : "Login"}
           </button>
 
-          {/* Message */}
           {message && (
             <div
               className={`text-center mt-4 font-medium ${

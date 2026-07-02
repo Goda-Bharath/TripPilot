@@ -90,7 +90,6 @@ const RegisterForm = () => {
             />
           </div>
 
-          {/* Password */}
           <div>
             <label className="block text-gray-300 mb-2">
               Password
@@ -105,8 +104,6 @@ const RegisterForm = () => {
               className="w-full px-4 py-3 rounded-xl bg-white/10 border border-gray-500 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
             />
           </div>
-
-          {/* Button */}
           <button
             type="submit"
             className="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-semibold hover:scale-105 transition duration-300 shadow-lg"
@@ -114,7 +111,6 @@ const RegisterForm = () => {
             Register
           </button>
 
-          {/* Message */}
           {message && (
             <div className="text-center text-sm mt-4 text-green-300">
               {message}
