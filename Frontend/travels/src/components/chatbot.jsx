@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 const WhatsAppChat = () => {
     const [open, setOpen] = useState(false);
@@ -24,10 +23,10 @@ const WhatsAppChat = () => {
             <div className="fixed bottom-10 right-3 z-[100] group ">
                 <button
                     onClick={callNow}
-                    className="fixed bottom-35  right-3 z-[100] h-12 w-12 flex items-center justify-center hover:scale-110 transition"
+                    className="fixed bottom-20  right-3 z-[100] h-12 w-12 flex items-center justify-center hover:scale-110 transition"
                     aria-label="Call Now"
                 >
-                    <div className="bg-green-400 p-2 rounded-full cursor-pointer animate-pulse">
+                    <div className="bg-green-600 p-2 rounded-full cursor-pointer animate-pulse">
                         📞
                     </div>
                 </button>
@@ -49,12 +48,8 @@ const WhatsAppChat = () => {
                     💬
                 </div>
             </button>
-
-            {/* Chat Popup */}
             {open && (
                 <div className="fixed bottom-24 right-4 cursor-pointer w-80 bg-white rounded-xl shadow-xl z-[1001] border animate-in slide-in-from-bottom-2">
-
-                    {/* Header */}
                     <div className="p-4 border-b flex items-center gap-3">
                         <div className="w-10 h-10 rounded-full bg-purple-500 text-white flex items-center justify-center">
                             GB
@@ -71,19 +66,15 @@ const WhatsAppChat = () => {
                             ✕
                         </button>
                     </div>
-
-                    {/* Message */}
                     <div className="p-4">
                         <div className="bg-gray-100 rounded-lg p-3 text-sm">
                             👋 Hi! How can I help you?
                         </div>
                     </div>
-
-                    {/* Action */}
                     <div className="p-4 border-t">
                         <button
                             onClick={openWhatsApp}
-                            className="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600 transition"
+                            className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-600 transition"
                         >
                             Chat on WhatsApp
                         </button>

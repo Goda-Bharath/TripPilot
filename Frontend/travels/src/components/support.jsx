@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function CustomerCare() {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12 grid lg:grid-cols-2 gap-8">
+    <div className="max-w-7xl mx-auto px-4 right-20 py-12 grid lg:grid-cols-2 gap-8">
       <Link to="/customer-care">
         <div className="bg-orange-400 hover:bg-orange-500 transition-all duration-300 rounded-2xl p-5 shadow-lg">
           <div className="bg-white rounded-xl p-8 h-full">

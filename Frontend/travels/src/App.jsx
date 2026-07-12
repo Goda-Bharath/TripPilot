@@ -34,6 +34,7 @@ const App = () => {
 
   return (
     <Wrapper token={token} handleLogout={handleLogout}>
+      <WhatsAppChat/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/buslist" element={<BusList />} />
