@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-
 import Wrapper from "./components/wrapper";
 import Home from "./components/Home";
 import RegisterForm from "./components/Registerform";
@@ -31,7 +30,6 @@ const App = () => {
     setToken(null);
     setUserId(null);
   };
-
   return (
     <Wrapper token={token} handleLogout={handleLogout}>
       <WhatsAppChat/>
@@ -39,26 +37,11 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/buslist" element={<BusList />} />
         <Route path="/register" element={<RegisterForm />} />
-        <Route
-          path="/login"
-          element={<LoginForm onLogin={handleLogin} />}
-        />
-        <Route
-          path="/bus/:busId"
-          element={<BusSeats token={token} />}
-        />
-        <Route
-          path="/my-bookings"
-          element={<UserBookings token={token} userId={userId} />}
-        />
-        <Route
-          path="/customer-care"
-          element={<CustomerCare />}
-        />
-        <Route
-          path="/offers"
-          element={<Offers />}
-        />
+        <Route path="/login" element={<LoginForm onLogin={handleLogin} />}/>
+        <Route path="/bus/:busId" element={<BusSeats token={token} />}/>
+        <Route path="/my-bookings"element={<UserBookings token={token} userId={userId} />} />
+        <Route path="/customer-care" element={<CustomerCare />}/>
+        <Route path="/offers" element={<Offers />}/>
       </Routes>
     </Wrapper>
   );
